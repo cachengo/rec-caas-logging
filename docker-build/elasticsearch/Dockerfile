@@ -21,9 +21,7 @@ ENV ES_VERSION=$VERSION
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 ENV JAVA_HOME /usr/lib/jvm/jre-1.8.0-openjdk
 ENV DOWNLOAD_URL "https://artifacts.elastic.co/downloads/elasticsearch"
-ENV ES_TARBAL "${DOWNLOAD_URL}/elasticsearch-${ES_VERSION}.tar.gz"
-ENV ES_TARBALL_ASC "${DOWNLOAD_URL}/elasticsearch-${ES_VERSION}.tar.gz.asc"
-ENV EXPECTED_SHA_URL "${DOWNLOAD_URL}/elasticsearch-${ES_VERSION}.tar.gz.sha512"
+ENV ES_TARBAL "${DOWNLOAD_URL}/elasticsearch-${ES_VERSION}-linux-x86_64.tar.gz"
 
 WORKDIR /usr/share/elasticsearch
 
@@ -57,6 +55,10 @@ COPY healthcheck /usr/local/bin/
 COPY elasticsearch-setindex /usr/share/elasticsearch
 
 RUN chown -R elasticsearch:elasticsearch /usr/share/elasticsearch /etc/logrotate.d/elasticsearch /usr/local/bin/healthcheck \
-&&  chmod +x /usr/share/elasticsearch/elasticsearch-setindex
+&&  chmod +x /usr/share/elasticsearch/elasticsearch-setindex \
+# workaround for Elasticsearch: this way ES can list the used plugins
+&&  cp -a /usr/share/elasticsearch/modules/* /usr/share/elasticsearch/plugins/ \
+&&  chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/plugins
+# workaround end
 
 CMD ["elasticsearch"]

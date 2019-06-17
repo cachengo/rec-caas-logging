@@ -14,8 +14,8 @@
 
 %define COMPONENT fluentd
 %define RPM_NAME caas-%{COMPONENT}
-%define RPM_MAJOR_VERSION 1.4.1
-%define RPM_MINOR_VERSION 1
+%define RPM_MAJOR_VERSION 1.5.0
+%define RPM_MINOR_VERSION 0
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 
 Name:           %{RPM_NAME}
