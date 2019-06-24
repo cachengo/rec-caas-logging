@@ -14,7 +14,7 @@
 
 %define COMPONENT elasticsearch
 %define RPM_NAME caas-%{COMPONENT}
-%define RPM_MAJOR_VERSION 7.1.0
+%define RPM_MAJOR_VERSION 7.1.1
 %define RPM_MINOR_VERSION 0
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 
