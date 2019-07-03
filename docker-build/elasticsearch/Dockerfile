@@ -21,7 +21,7 @@ ENV ES_VERSION=$VERSION
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 ENV JAVA_HOME /usr/lib/jvm/jre-1.8.0-openjdk
 ENV DOWNLOAD_URL "https://artifacts.elastic.co/downloads/elasticsearch"
-ENV ES_TARBAL "${DOWNLOAD_URL}/elasticsearch-${ES_VERSION}-linux-x86_64.tar.gz"
+ENV ES_TARBAL "${DOWNLOAD_URL}/elasticsearch-oss-${ES_VERSION}-linux-x86_64.tar.gz"
 
 WORKDIR /usr/share/elasticsearch
 
