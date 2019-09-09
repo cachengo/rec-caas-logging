@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+%define CPU_ARCHITECTURE aarch64
 %define COMPONENT elasticsearch
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 7.2.1
@@ -24,7 +25,7 @@ Release:        %{RPM_MINOR_VERSION}%{?dist}
 Summary:        Containers as a Service Elasticsearch component
 License:        %{_platform_license} and GNU General Public License v2.0 only and GNU Lesser General Public License v2.1 only and MIT license and BSD and Apache-2.0
 URL:            https://github.com/elastic/elasticsearch
-BuildArch:      x86_64
+BuildArch:      %{CPU_ARCHITECTURE}
 Vendor:         %{_platform_vendor} and elastic/elasticsearch unmodified
 Source0:        %{name}-%{version}.tar.gz
 

@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+%define CPU_ARCHITECTURE aarch64
 %define COMPONENT fluentd
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.6.3
@@ -24,7 +25,7 @@ Release:        %{RPM_MINOR_VERSION}%{?dist}
 Summary:        Containers as a Service Fluentd component
 License:        %{_platform_license} and MIT license and Apache License and BSD 3-clause New or Revised License and Ruby License and BSD and Mozilla Public License and BSD 3-clause New or Revised License
 URL:            https://github.com/fluent/fluentd
-BuildArch:      x86_64
+BuildArch:      %{CPU_ARCHITECTURE}
 Vendor:         %{_platform_vendor} and fluent/fluentd unmodified
 Source0:        %{name}-%{version}.tar.gz
 
