@@ -1,6 +1,5 @@
----
 # Copyright 2019 Nokia
-#
+
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -13,13 +12,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-network.host: 0.0.0.0
-
-# this value is required because we set "network.host"
-# be sure to modify it appropriately for a production cluster deployment
-discovery.zen.minimum_master_nodes: 1
-# bootstrap.memory_lock: true
-
-node.master: true
-node.ingest: true
-node.data: true
+__import__('pkg_resources').declare_namespace(__name__)
